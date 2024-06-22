@@ -2,11 +2,11 @@
 
     use Core\Route;
 
-    //import Controllers
     use App\Controllers\HomeController;
 
     
     Route::get('/', [HomeController::class, 'index']);
+    Route::get('/users', [HomeController::class, 'users']);
     
     Route::get('/contact', function (){
         echo 'hola amingo 2';

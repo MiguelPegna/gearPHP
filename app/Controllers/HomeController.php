@@ -1,19 +1,28 @@
 <?php
     
-    namespace App\Controllers;
+    namespace app\Controllers;
 
-    use Core\Controller;
-    use Core\View;
+    use core\Controller;
+    use app\Models\HomeModel;
 
     class HomeController extends Controller{
-
-
+        public $model;
+        
         public function __construct(){
-            $this->view = new View();
+            $this->model = new HomeModel();
         }
 
         public function index(){
-            $this->view->getView($this, 'home');
+            $this->setVar('title', 'Home Page');
+            $this->view($this, 'home');
         }//end method
+
+        public function countries(){
+            header("Access-Control-Allow-Origin: *");
+            
+            $data = $this->model->index();
+            echo json_encode($data, JSON_UNESCAPED_UNICODE);
+            die();
+        }
 
     }//end class
