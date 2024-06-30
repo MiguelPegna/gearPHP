@@ -17,6 +17,11 @@
 
         public static function refer(){
             $path = $_SERVER['REQUEST_URI'];
+
+            if(strpos($path, '?') ){  //if send vars GET in url
+                //$path = trim($path, '/');
+                $path = substr($path, 0, strpos($path, '?'));
+            }
             self::findRoute($path);
         }
 
