@@ -8,5 +8,5 @@
     define('DB_CHARSET', 'utf8');
 
     //path url constants
-    define('JS_FILES', '../public/js/');
-    define('CSS_FILES', '../public/css/');
+    define('JS_FILES', '/js');
+    define('CSS_FILES', '/css');

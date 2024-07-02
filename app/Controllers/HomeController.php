@@ -14,7 +14,7 @@
 
         public function index(){
             $this->setVar('title', 'Home Page');
-            $this->view($this, 'home');
+            $this->view('home.home');
         }//end method
 
         public function countries(){
